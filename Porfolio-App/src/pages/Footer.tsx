@@ -1,12 +1,12 @@
 import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
 
-const Contact = (/*props: Props*/) => {
+function Footer() {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
-        backgroundColor: "#fff",
+        minHeight: "15vh",
+        backgroundColor: "#000000",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -16,7 +16,7 @@ const Contact = (/*props: Props*/) => {
     >
       <Box sx={{ maxWidth: 800 }}>
         <Typography variant="h4" gutterBottom>
-          Contact
+          Footer
         </Typography>
 
         <Typography color="text.secondary" lineHeight={1.7}>
@@ -26,6 +26,6 @@ const Contact = (/*props: Props*/) => {
       </Box>
     </Box>
   );
-};
+}
 
-export default Contact;
+export default Footer;

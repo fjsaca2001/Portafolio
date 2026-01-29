@@ -1,34 +1,84 @@
-import { ReactNode } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import { styled } from "@mui/material/styles";
 
-interface CardProps {
-  children: ReactNode;
+interface ImgMediaCardProps {
+  pathImage: string;
+  title: string;
+  text: string;
+  detalles?: string[];
 }
 
-function Card(props: CardProps) {
-  const { children } = props;
+const Demo = styled("div")(({ theme }) => ({
+  backgroundColor: (theme.vars || theme).palette.background.paper,
+}));
+
+function ImgMediaCard(props: ImgMediaCardProps) {
+  const { pathImage, title, text, detalles } = props;
   return (
-    <div
-      className="card"
-      style={{
-        width: "350px",
+    <Card
+      sx={{
+        //maxWidth: 700,
+        height: 200,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <div className="card-body">{children}</div>
-    </div>
+      <CardMedia
+        component="img"
+        alt="Institute"
+        image={pathImage}
+        sx={{
+          height: 80,
+          objectFit: "contain",
+          backgroundColor: "#ffffff",
+        }}
+      />
+      <CardContent
+        sx={{
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+        }}
+      >
+        <Typography gutterBottom variant="subtitle1" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          {text}
+        </Typography>
+      </CardContent>
+      <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
+        <Grid container spacing={2}>
+          <Grid size={{ xs: 12, md: 12 }}>
+            <Demo>
+              <List>
+                {detalles?.map((element, index) => (
+                  <ListItem key={index} alignItems="flex-start">
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        textAlign: "justify",
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {element}
+                    </Typography>
+                  </ListItem>
+                ))}
+              </List>
+            </Demo>
+          </Grid>
+        </Grid>
+      </Box>
+    </Card>
   );
 }
 
-interface CardBodyProps {
-  title: string;
-  body?: string;
-}
-export function CardBody(props: CardBodyProps) {
-  const { title, body } = props;
-  return (
-    <>
-      <h5 className="card-title">{title}</h5>
-      <p className="card-text">{body}</p>
-    </>
-  );
-}
-export default Card;
+export default ImgMediaCard;

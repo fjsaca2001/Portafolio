@@ -9,16 +9,22 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import CodeIcon from "@mui/icons-material/Code";
 import { NavLink } from "react-router-dom";
 
+const handleScroll = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: "smooth",
+  });
+};
+
 const pages = [
-  { label: "Home", path: "/" },
-  { label: "Sobre mí", path: "/about" },
-  { label: "Skills / Stack", path: "/skills" },
-  { label: "Proyectos", path: "/projects" },
-  { label: "Experiencia", path: "/experience" },
-  { label: "Contacto", path: "/contact" },
+  { label: "Home", path: "Home" },
+  { label: "Sobre mí", path: "AboutMe" },
+  { label: "Experiencia", path: "Experience" },
+  { label: "Skills / Stack", path: "Skills" },
+  { label: "Proyectos", path: "Project" },
+  { label: "Contacto", path: "Contact" },
 ];
 
 function ResponsiveAppBar() {
@@ -35,7 +41,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="md">
         <Toolbar disableGutters>
           <Box
@@ -50,18 +56,8 @@ function ResponsiveAppBar() {
             }}
           >
             <IconButton disableRipple sx={{ mr: 1, color: "inherit" }}>
-              <AdbIcon />
+              <CodeIcon />
             </IconButton>
-
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-              }}
-            ></Typography>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -92,11 +88,7 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem
-                  component={NavLink}
-                  to={page.path}
-                  onClick={handleCloseNavMenu}
-                >
+                <MenuItem onClick={() => handleScroll(page.path)}>
                   <Typography sx={{ textAlign: "center" }}>
                     {page.label}
                   </Typography>
@@ -104,7 +96,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <CodeIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -127,9 +119,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page.path}
-                component={NavLink}
-                to={page.path}
-                onClick={handleCloseNavMenu}
+                onClick={() => handleScroll(page.path)}
                 sx={{
                   my: 2,
                   color: "white",

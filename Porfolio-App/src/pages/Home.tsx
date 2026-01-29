@@ -1,75 +1,79 @@
-import Principal from "../components/ContainerWrapper";
-import { Button } from "@mui/material";
-import DownloadIcon from "@mui/icons-material/Download";
-import { Box } from "@mui/material";
-import ImagenProfile from "../../public/img/Photo.jpeg";
+import { Box, Typography, IconButton } from "@mui/material";
+import FondoHome from "../../public/img/fondoBlack.avif";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Home() {
   return (
-    <Principal maxWidth="90%" padding="40px">
+    <Box
+      sx={{
+        height: "100vh",
+        width: "100%",
+        backgroundImage: `url(${FondoHome})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+      }}
+    >
+      {/* Overlay oscuro */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // columnas en mobile -> filas en desktop
-          gap: 4, // espacio entre columnas
-          width: "100%",
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "rgba(0,0,0,0.5)",
+        }}
+      />
+
+      {/* Contenido */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          textAlign: "center",
+          color: "white",
         }}
       >
-        <Box
-          sx={{
-            flex: 1,
-            p: 2,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <h1>HOLA, SOY FRANK!</h1>
-          <h1>FULL STACK DEVELOPER</h1>
-          <br />
-          <p>
-            Ingeniero en Ciencias de la Computación con 3 años de experiencia en
-            desarrollo de software y análisis de ciberseguridad. Experto en
-            bases de datos relacionales y no relacionales (Sybase, SQL Server,
-            PostgreSQL, MongoDB) y en lenguajes como C#, Python y JavaScript.
-            Manejo de frameworks como .NET Framework, .NET Core y Django.
-          </p>
-          <br />
-          <Button variant="contained" endIcon={<DownloadIcon />}>
-            Descargar CV
-          </Button>
-        </Box>
-        <Box
-          sx={{
-            flex: 1,
-            p: 2,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            component="img"
-            src={ImagenProfile}
-            alt="Mi foto"
-            sx={{
-              width: 300,
-              height: 350,
-              borderRadius: "25%",
-              objectFit: "cover",
-              boxShadow: "0 4px 20px rgba(0, 3, 170, 0.5)",
-              transition: "transform 0.3s, box-shadow 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-                boxShadow: "0 8px 30px rgba(0, 3, 170, 0.5)",
-              },
-            }}
-          />
+        <Box>
+          <Typography variant="h3" sx={{ color: "text.main" }}>
+            FRANK SACA
+          </Typography>
+          <Typography variant="h5" sx={{ color: "text.main" }}>
+            Full Stack Developer - Junior Cybersecurity Analyst
+          </Typography>
         </Box>
       </Box>
-    </Principal>
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 24,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 2,
+        }}
+      >
+        <IconButton
+          onClick={() => {
+            document
+              .getElementById("AboutMe")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          sx={{
+            color: "white",
+            animation: "bounce 2s infinite",
+            "@keyframes bounce": {
+              "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
+              "40%": { transform: "translateY(-10px)" },
+              "60%": { transform: "translateY(-5px)" },
+            },
+          }}
+        >
+          <ExpandMoreIcon fontSize="large" />
+        </IconButton>
+      </Box>
+    </Box>
   );
 }
 

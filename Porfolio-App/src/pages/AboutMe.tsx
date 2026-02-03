@@ -17,7 +17,7 @@ function AboutMe() {
         px: 6,
       }}
     >
-      <Box sx={{ maxWidth: "70%" }}>
+      <Box sx={{ maxWidth: "50%" }}>
         <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
           <Box
             component="img"

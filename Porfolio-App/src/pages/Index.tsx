@@ -1,9 +1,9 @@
 import Home from "./Home";
 import AboutMe from "./AboutMe";
-import Experience from "./Experience";
-import Skills from "./Skills";
+import WhatIDo from "./WhatIDo";
 import Project from "./Projects";
 import Contact from "./Contact";
+import Skills from "./Skills";
 import Cv from "./Cv";
 import Footer from "./Footer";
 import { Box } from "@mui/material";
@@ -17,8 +17,8 @@ function Index() {
       <Box id="AboutMe" className="seccion">
         <AboutMe />
       </Box>
-      <Box id="Experience" className="seccion">
-        <Experience />
+      <Box id="WhatIDo" className="seccion">
+        <WhatIDo />
       </Box>
       <Box id="Skills" className="seccion">
         <Skills />

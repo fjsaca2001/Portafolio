@@ -14,16 +14,7 @@ const Experience = (/*props: Props*/) => {
         scrollBehavior: "smooth",
       }}
     >
-      <Box sx={{ maxWidth: 800 }}>
-        <Typography variant="h4" gutterBottom>
-          Experience
-        </Typography>
-
-        <Typography color="text.secondary" lineHeight={1.7}>
-          Soy desarrollador Full Stack con experiencia en el sector
-          financiero...
-        </Typography>
-      </Box>
+      <Box sx={{ maxWidth: 800 }}></Box>
     </Box>
   );
 };

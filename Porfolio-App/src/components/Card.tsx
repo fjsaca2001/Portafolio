@@ -7,12 +7,14 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { styled } from "@mui/material/styles";
+import { SxProps, Theme } from "@mui/material";
 
 interface ImgMediaCardProps {
   pathImage: string;
   title: string;
   text: string;
   detalles?: string[];
+  sx?: SxProps<Theme>;
 }
 
 const Demo = styled("div")(({ theme }) => ({
@@ -20,7 +22,7 @@ const Demo = styled("div")(({ theme }) => ({
 }));
 
 function ImgMediaCard(props: ImgMediaCardProps) {
-  const { pathImage, title, text, detalles } = props;
+  const { pathImage, title, text, detalles, sx } = props;
   return (
     <Card
       sx={{
@@ -28,6 +30,8 @@ function ImgMediaCard(props: ImgMediaCardProps) {
         height: 200,
         display: "flex",
         flexDirection: "column",
+        backgroundColor: "#ffffff",
+        ...sx,
       }}
     >
       <CardMedia
@@ -37,7 +41,8 @@ function ImgMediaCard(props: ImgMediaCardProps) {
         sx={{
           height: 80,
           objectFit: "contain",
-          backgroundColor: "#ffffff",
+          //backgroundColor: "#ffffff",
+          marginTop: "20px",
         }}
       />
       <CardContent

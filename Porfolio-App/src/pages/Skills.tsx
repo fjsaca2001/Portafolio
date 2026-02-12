@@ -59,7 +59,7 @@ const Skills = (/*props: Props*/) => {
     <Box
       sx={{
         minHeight: "90vh",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#FAFAFA",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

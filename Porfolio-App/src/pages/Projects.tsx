@@ -1,28 +1,56 @@
-import Typography from "@mui/material/Typography";
 import { Box } from "@mui/material";
+import GridProjects from "../components/GridProjects";
+import { Project } from "../interfaces/types";
+import Photo from "../../public/img/FacesLogo.png";
+
+const projects: Project[] = [
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 1",
+    code: "React + MUI",
+  },
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 2",
+    code: "Node + Express",
+  },
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 2",
+    code: "Node + Express",
+  },
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 2",
+    code: "Node + Express",
+  },
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 2",
+    code: "Node + Express",
+  },
+  {
+    pathImage: Photo,
+    tittle: "Proyecto 2",
+    code: "Node + Express",
+  },
+];
 
 const Projects = (/*props: Props*/) => {
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundColor: "#b8b8b8",
+        backgroundColor: "#FAFAFA",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        px: 4,
+        textAlign: "center",
         scrollBehavior: "smooth",
       }}
     >
-      <Box sx={{ maxWidth: 800 }}>
-        <Typography variant="h4" gutterBottom>
-          Projects
-        </Typography>
-
-        <Typography color="text.secondary" lineHeight={1.7}>
-          Soy desarrollador Full Stack con experiencia en el sector
-          financiero...
-        </Typography>
+      <Box sx={{ width: "100%" }}>
+        <GridProjects lstProjects={projects} />
       </Box>
     </Box>
   );

@@ -1,12 +1,11 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-//import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-//import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import CodeIcon from "@mui/icons-material/Code";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Typography } from "@mui/material";
 
 const handleScroll = (id: string) => {
   document.getElementById(id)?.scrollIntoView({
@@ -52,41 +51,49 @@ function ResponsiveAppBar() {
         transition: "all 0s ease",
       }}
     >
-      {/* BOTON */}
-      <Box maxWidth="100%" sx={{ display: "flex" }}>
-        <Box
-          component={NavLink}
-          to="/"
-          sx={{
-            display: { xs: "none", md: "flex" },
-            alignItems: "center",
-            mr: 2,
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          <Box>
-            <IconButton disableRipple sx={{ mr: 1, color: "inherit" }}>
-              <CodeIcon />
-            </IconButton>
-          </Box>
-          <Box>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page.path}
-                  onClick={() => handleScroll(page.path)}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    "&.active": { borderBottom: "2px solid white" },
-                  }}
-                >
-                  {page.label}
-                </Button>
-              ))}
-            </Box>
+      <Box
+        width="100%"
+        sx={{
+          display: { xs: "none", md: "flex" },
+          alignItems: "center",
+          mr: 20,
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        <Box width="50%" textAlign="start">
+          <IconButton
+            component={NavLink}
+            to="/"
+            disableRipple
+            sx={{ mr: 1, color: "inherit", marginLeft: "10px" }}
+          >
+            <CodeIcon />
+            <Typography variant="h6" fontFamily="Inter" paddingLeft="10px">
+              Frank Saca
+            </Typography>
+          </IconButton>
+        </Box>
+        <Box width="50%" textAlign="end" alignContent="end">
+          <Box
+            width="100%"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page.path}
+                onClick={() => handleScroll(page.path)}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontFamily: "Inter",
+                  "&.active": { borderBottom: "2px solid white" },
+                }}
+              >
+                {page.label}
+              </Button>
+            ))}
           </Box>
         </Box>
       </Box>

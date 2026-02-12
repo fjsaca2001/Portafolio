@@ -23,7 +23,7 @@ function Home() {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(0,0,0,0.5)",
+          backgroundColor: "rgba(0, 0, 0, 0.75)",
         }}
       />
 
@@ -37,10 +37,18 @@ function Home() {
         }}
       >
         <Box>
-          <Typography variant="h3" sx={{ color: "text.main" }}>
+          <Typography
+            variant="h3"
+            fontFamily="Inter"
+            sx={{ color: "text.main" }}
+          >
             FRANK SACA
           </Typography>
-          <Typography variant="h5" sx={{ color: "text.main" }}>
+          <Typography
+            variant="h6"
+            fontFamily="Inter"
+            sx={{ color: "text.main" }}
+          >
             Full Stack Developer - Junior Cybersecurity Analyst
           </Typography>
         </Box>

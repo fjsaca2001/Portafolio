@@ -31,6 +31,8 @@ const Passion = (props: PassionProps) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          transition: "all 0.8s ease",
+          ":hover": { transform: "rotate(360deg) scale(1.1)" },
         }}
       >
         <IconButton size="large" disableRipple sx={{ color: "inherit" }}>

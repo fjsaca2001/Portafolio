@@ -10,7 +10,7 @@ function AboutMe() {
     <Box
       sx={{
         minHeight: "90vh",
-        backgroundColor: "#fff",
+        backgroundColor: "#FAFAFA",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

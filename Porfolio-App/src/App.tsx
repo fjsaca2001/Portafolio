@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import MainLayout from "./layout/MainLayout";
 import AboutMe from "./pages/AboutMe";
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <CssBaseline /> {/* eliminar bordes*/}
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Index />} />
@@ -26,7 +27,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

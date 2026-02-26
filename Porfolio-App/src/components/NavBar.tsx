@@ -18,7 +18,7 @@ const pages = [
   { label: "Sobre mí", path: "AboutMe" },
   { label: "Experiencia", path: "WhatIDo" },
   { label: "Skills / Stack", path: "Skills" },
-  { label: "Proyectos", path: "Project" },
+  // { label: "Proyectos", path: "Project" },
   { label: "Contacto", path: "Contact" },
 ];
 

@@ -39,7 +39,11 @@ function AboutMe() {
         </Box>
         <Typography
           variant="body2"
-          sx={{ color: "text.secondary", textAlign: "justify" }}
+          sx={{
+            color: "text.secondary",
+            textAlign: "justify",
+            fontFamily: "Google Sans Flex",
+          }}
         >
           Soy desarrollador Full Stack radicado en Loja, Ecuador, con
           experiencia en el desarrollo de soluciones tecnológicas, migración de
@@ -53,6 +57,7 @@ function AboutMe() {
         </Typography>
         <Box
           sx={{
+            margin: "5px",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             gap: 1,

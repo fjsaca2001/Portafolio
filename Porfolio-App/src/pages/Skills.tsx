@@ -82,7 +82,11 @@ const Skills = (/*props: Props*/) => {
             <Box sx={{ width: "80%" }}>
               <Typography
                 variant="h6"
-                sx={{ color: "text.secondary", textAlign: "center" }}
+                sx={{
+                  color: "text.primary",
+                  textAlign: "center",
+                  fontFamily: "Google Sans Flex",
+                }}
               >
                 Tecnologías y Herramientas
               </Typography>
@@ -93,9 +97,13 @@ const Skills = (/*props: Props*/) => {
             <Box sx={{ width: "100%" }}>
               <Typography
                 variant="h6"
-                sx={{ color: "text.secondary", textAlign: "start" }}
+                sx={{
+                  color: "text.primary",
+                  textAlign: "start",
+                  fontFamily: "Google Sans Flex",
+                }}
               >
-                Empresas en las que he trabajado{" "}
+                Empresas en las que he trabajado
               </Typography>
               <CardMedia
                 component="img"
@@ -107,10 +115,18 @@ const Skills = (/*props: Props*/) => {
                   marginTop: "20px",
                 }}
               />
-              <Typography gutterBottom variant="subtitle1" component="div">
+              <Typography
+                gutterBottom
+                variant="subtitle1"
+                component="div"
+                sx={{ fontFamily: "Google Sans Flex" }}
+              >
                 Fundación de Apoyo Social y Economico del Ecuador
               </Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              <Typography
+                variant="body2"
+                sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+              >
                 Técnico de Desarrollo | Jun 2025 - Actualidad
               </Typography>
               <br />
@@ -124,10 +140,18 @@ const Skills = (/*props: Props*/) => {
                   marginTop: "20px",
                 }}
               />
-              <Typography gutterBottom variant="subtitle1" component="div">
+              <Typography
+                gutterBottom
+                variant="subtitle1"
+                component="div"
+                sx={{ fontFamily: "Google Sans Flex" }}
+              >
                 Cooperativa de Ahorro y Crédito Manuel Estevan Godoy Ortega
               </Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              <Typography
+                variant="body2"
+                sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+              >
                 Desarrollador de Sistemas | Jun 2023 - May 2025
               </Typography>
             </Box>

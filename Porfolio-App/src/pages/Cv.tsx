@@ -38,7 +38,14 @@ const Cv = () => {
           flexDirection: "column",
         }}
       >
-        <Typography variant="h3" sx={{ color: "#F5F5F5", textAlign: "center" }}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: "#F5F5F5",
+            textAlign: "center",
+            fontFamily: "Google Sans Flex",
+          }}
+        >
           ¡Mira mi currículum!
         </Typography>
         <Button

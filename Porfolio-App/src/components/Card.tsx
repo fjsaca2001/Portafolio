@@ -26,8 +26,7 @@ function ImgMediaCard(props: ImgMediaCardProps) {
   return (
     <Card
       sx={{
-        //maxWidth: 700,
-        height: 200,
+        height: "225px",
         display: "flex",
         flexDirection: "column",
         backgroundColor: "#ffffff",
@@ -41,7 +40,6 @@ function ImgMediaCard(props: ImgMediaCardProps) {
         sx={{
           height: 80,
           objectFit: "contain",
-          //backgroundColor: "#ffffff",
           marginTop: "20px",
         }}
       />
@@ -52,10 +50,18 @@ function ImgMediaCard(props: ImgMediaCardProps) {
           textAlign: "center",
         }}
       >
-        <Typography gutterBottom variant="subtitle1" component="div">
+        <Typography
+          gutterBottom
+          variant="subtitle1"
+          component="div"
+          sx={{ fontFamily: "Google Sans Flex" }}
+        >
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        <Typography
+          variant="body2"
+          sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+        >
           {text}
         </Typography>
       </CardContent>

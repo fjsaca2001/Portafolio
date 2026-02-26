@@ -5,7 +5,7 @@ import AboutMe from "./pages/AboutMe";
 import Contact from "./pages/Contact";
 import Experience from "./pages/Experience";
 //import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+// import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import "./App.css";
 import { CssBaseline } from "@mui/material";
@@ -22,7 +22,7 @@ function App() {
             <Route path="/about" element={<AboutMe />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/experience" element={<Experience />} />
-            <Route path="/projects" element={<Projects />} />
+            {/* <Route path="/projects" element={<Projects />} /> */}
             <Route path="/skills" element={<Skills />} />
           </Route>
         </Routes>

@@ -16,7 +16,7 @@ const Passion = (props: PassionProps) => {
         width: "30%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "start",
         alignItems: "center",
         textAlign: "center",
         gap: 4,
@@ -39,12 +39,19 @@ const Passion = (props: PassionProps) => {
           {icon}
         </IconButton>
       </Box>
-      <Typography variant="h6" sx={{ color: "text.primary" }}>
+      <Typography
+        variant="h6"
+        sx={{ color: "text.primary", fontFamily: "Google Sans Flex" }}
+      >
         {title}
       </Typography>
       <Typography
         variant="body1"
-        sx={{ color: "text.secondary", textAlign: "justify" }}
+        sx={{
+          color: "text.secondary",
+          textAlign: "justify",
+          fontFamily: "Google Sans Flex",
+        }}
       >
         {text}
       </Typography>

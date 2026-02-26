@@ -71,10 +71,16 @@ const Contact = (/*props: Props*/) => {
                   rotate: "-45deg",
                 }}
               />
-              <Typography textAlign="justify">
+              <Typography
+                textAlign="justify"
+                sx={{ fontFamily: "Google Sans Flex" }}
+              >
                 ¿Te gustaría ponerte en contacto conmigo?
               </Typography>
-              <Typography textAlign="justify">
+              <Typography
+                textAlign="justify"
+                sx={{ fontFamily: "Google Sans Flex" }}
+              >
                 Si quieres conversar para un proyecto o alguna vacante, ¡no
                 dudes en enviarme un correo electrónico!
               </Typography>
@@ -94,13 +100,20 @@ const Contact = (/*props: Props*/) => {
                   gap: 2,
                 }}
               >
-                <TextField label="Nombre" name="user_name" required fullWidth />
+                <TextField
+                  label="Nombre"
+                  name="user_name"
+                  required
+                  fullWidth
+                  sx={{ fontFamily: "Google Sans Flex" }}
+                />
                 <TextField
                   label="Correo electrónico"
                   name="user_email"
                   type="email"
                   required
                   fullWidth
+                  sx={{ fontFamily: "Google Sans Flex" }}
                 />
                 <TextField
                   label="Mensaje"
@@ -109,8 +122,13 @@ const Contact = (/*props: Props*/) => {
                   rows={4}
                   required
                   fullWidth
+                  sx={{ fontFamily: "Google Sans Flex" }}
                 />
-                <Button type="submit" variant="contained">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{ fontFamily: "Google Sans Flex" }}
+                >
                   Enviar mensaje
                 </Button>
               </Box>

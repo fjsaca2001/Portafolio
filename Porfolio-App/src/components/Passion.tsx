@@ -13,13 +13,9 @@ const Passion = (props: PassionProps) => {
   return (
     <Box
       sx={{
-        width: "30%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "start",
-        alignItems: "center",
-        textAlign: "center",
-        gap: 4,
+        width: "90%",
+        margin: "10px auto",
+        height: { md: "430px" },
       }}
     >
       <Box
@@ -29,7 +25,7 @@ const Passion = (props: PassionProps) => {
           width: "100px",
           height: "100px",
           display: "flex",
-          alignItems: "center",
+          margin: "auto",
           justifyContent: "center",
           transition: "all 0.8s ease",
           ":hover": { transform: "rotate(360deg) scale(1.1)" },
@@ -41,7 +37,12 @@ const Passion = (props: PassionProps) => {
       </Box>
       <Typography
         variant="h6"
-        sx={{ color: "text.primary", fontFamily: "Google Sans Flex" }}
+        sx={{
+          margin: "10px 0px",
+          color: "text.primary",
+          fontFamily: "Google Sans Flex",
+          textAlign: "center",
+        }}
       >
         {title}
       </Typography>

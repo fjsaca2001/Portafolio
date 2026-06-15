@@ -14,7 +14,6 @@ const Cv = () => {
         backgroundAttachment: "fixed",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
         position: "relative",
       }}
     >
@@ -27,14 +26,15 @@ const Cv = () => {
           zIndex: 1,
         }}
       />
-
       <Box
         sx={{
           position: "relative",
           zIndex: 2,
-          maxWidth: "40%",
+          width: {xs:"90%"},
           display: "flex",
           alignContent: "center",
+          alignItems:"center",
+          margin:"auto",
           flexDirection: "column",
         }}
       >
@@ -65,12 +65,13 @@ const Cv = () => {
             px: 4,
             py: 1.3,
             fontWeight: 600,
+            alignContent: "center",
             letterSpacing: "0.05em",
-            transition: "all 0.3s ease",
             "&:hover": {
               boxShadow: ` 0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6) `,
               transform: "translateY(-5px)",
             },
+            width:"250px"
           }}
         >
           Descargar CV

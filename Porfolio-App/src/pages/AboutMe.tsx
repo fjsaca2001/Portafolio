@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { autocompleteClasses, Box } from "@mui/material";
 import Card from "../components/Card";
 import logoUtpl from "../../public/img/utpl2.png";
 import logoUide from "../../public/img/logo-uide.webp";
@@ -11,21 +11,34 @@ function AboutMe() {
       sx={{
         minHeight: "90vh",
         backgroundColor: "#FAFAFA",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        px: 6,
       }}
     >
-      <Box sx={{ maxWidth: "50%" }}>
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
+      <Box
+        sx={{
+          width: {xs: "90%", sm:"75%", md:"60%"},
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "repeat(1,1fr)",
+            sm: "repeat(2,2fr)",
+            md: "repeat(2,2fr)",
+          },
+          margin: "auto",
+        }}
+      >
+        <Box
+          sx={{
+            margin: "20px auto",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
           <Box
             component="img"
             src={ImagenProfile}
             alt="Mi foto"
             sx={{
-              width: 150,
-              height: 150,
+              width: { xs: 120, sm: 140, md: 150 },
+              height: { xs: 120, sm: 140, md: 150 },
               borderRadius: "50%",
               objectFit: "cover",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
@@ -36,34 +49,30 @@ function AboutMe() {
               },
             }}
           />
+          <Typography
+            variant="body2"
+            sx={{
+              color: "text.secondary",
+              textAlign: "justify",
+              margin: "20px 0",
+              fontFamily: "Google Sans Flex",
+            }}
+          >
+            Soy desarrollador Full Stack radicado en Loja, Ecuador, con
+            experiencia en el desarrollo de soluciones tecnológicas, migración
+            de sistemas y creación de nuevos módulos. He participado en
+            proyectos con distintos enfoques, abarcando tanto backend, frontend,
+            como desarrollos full stack, adaptándome a las necesidades de cada
+            iniciativa. Mi experiencia profesional se concentra principalmente
+            en el sector financiero, área en la que he trabajado desarrollando
+            sistemas robustos y orientados a la eficiencia, para empresas
+            especializadas en este rubro.
+          </Typography>
         </Box>
-        <Typography
-          variant="body2"
-          sx={{
-            color: "text.secondary",
-            textAlign: "justify",
-            fontFamily: "Google Sans Flex",
-          }}
-        >
-          Soy desarrollador Full Stack radicado en Loja, Ecuador, con
-          experiencia en el desarrollo de soluciones tecnológicas, migración de
-          sistemas y creación de nuevos módulos. He participado en proyectos con
-          distintos enfoques, abarcando tanto backend, frontend, como
-          desarrollos full stack, adaptándome a las necesidades de cada
-          iniciativa. Mi experiencia profesional se concentra principalmente en
-          el sector financiero, área en la que he trabajado desarrollando
-          sistemas robustos y orientados a la eficiencia, para empresas
-          especializadas en este rubro.
-        </Typography>
         <Box
           sx={{
-            margin: "5px",
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 1,
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "center",
+            margin: "auto",
+            width: "90%",
           }}
         >
           <Card

@@ -1,7 +1,7 @@
 import Home from "./Home";
 import AboutMe from "./AboutMe";
 import WhatIDo from "./WhatIDo";
-// import Project from "./Projects";
+import Project from "./Projects";
 import Contact from "./Contact";
 import Skills from "./Skills";
 import Cv from "./Cv";
@@ -26,9 +26,9 @@ function Index() {
       <Box id="Cv">
         <Cv />
       </Box>
-      {/* <Box id="Project" className="section">
+     <Box id="Project" className="section">
         <Project />
-      </Box> */}
+      </Box>
       <Box id="Contact" className="section">
         <Contact />
       </Box>

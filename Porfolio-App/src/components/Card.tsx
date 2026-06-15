@@ -13,24 +13,15 @@ interface ImgMediaCardProps {
   pathImage: string;
   title: string;
   text: string;
-  detalles?: string[];
-  sx?: SxProps<Theme>;
 }
 
-const Demo = styled("div")(({ theme }) => ({
-  backgroundColor: (theme.vars || theme).palette.background.paper,
-}));
-
 function ImgMediaCard(props: ImgMediaCardProps) {
-  const { pathImage, title, text, detalles, sx } = props;
+  const { pathImage, title, text } = props;
   return (
     <Card
       sx={{
-        height: "225px",
-        display: "flex",
-        flexDirection: "column",
         backgroundColor: "#ffffff",
-        ...sx,
+        margin:"10px"
       }}
     >
       <CardMedia
@@ -38,9 +29,10 @@ function ImgMediaCard(props: ImgMediaCardProps) {
         alt="Institute"
         image={pathImage}
         sx={{
-          height: 80,
+          height: { xs: 56, sm: 64, md: 80 },
           objectFit: "contain",
-          marginTop: "20px",
+          marginTop: { xs: 1, sm: 2 },
+          p: { xs: 0.5, sm: 0 },
         }}
       />
       <CardContent
@@ -48,46 +40,33 @@ function ImgMediaCard(props: ImgMediaCardProps) {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
+          py: { xs: 1, sm: 1.5 },
+          px: { xs: 1.5, sm: 2 },
+          "&:last-child": { pb: { xs: 1.5, sm: 2 } },
         }}
       >
         <Typography
           gutterBottom
           variant="subtitle1"
           component="div"
-          sx={{ fontFamily: "Google Sans Flex" }}
+          sx={{
+            fontFamily: "Google Sans Flex",
+            fontSize: { xs: "0.9rem", sm: "1rem" },
+          }}
         >
           {title}
         </Typography>
         <Typography
           variant="body2"
-          sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+          sx={{
+            color: "text.secondary",
+            fontFamily: "Google Sans Flex",
+            fontSize: { xs: "0.75rem", sm: "0.875rem" },
+          }}
         >
           {text}
         </Typography>
       </CardContent>
-      <Box sx={{ flexGrow: 1, maxWidth: 500 }}>
-        <Grid container spacing={2}>
-          <Grid size={{ xs: 12, md: 12 }}>
-            <Demo>
-              <List>
-                {detalles?.map((element, index) => (
-                  <ListItem key={index} alignItems="flex-start">
-                    <Typography
-                      variant="caption"
-                      sx={{
-                        textAlign: "justify",
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      {element}
-                    </Typography>
-                  </ListItem>
-                ))}
-              </List>
-            </Demo>
-          </Grid>
-        </Grid>
-      </Box>
     </Card>
   );
 }

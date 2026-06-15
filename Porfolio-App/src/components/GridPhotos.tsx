@@ -11,7 +11,7 @@ const GridPhotos = (props: GridPhotosProps) => {
       sx={{
         display: "grid",
         gridTemplateColumns: {
-          xs: "repeat(2, 1fr)",
+          xs: "repeat(5, 1fr)",
           sm: "repeat(3, 1fr)",
           md: "repeat(6, 1fr)",
         },
@@ -25,7 +25,7 @@ const GridPhotos = (props: GridPhotosProps) => {
           src={img}
           alt={`img-${index}`}
           sx={{
-            width: "100%",
+            width: { xs: "80%", sm: "100%", md: "100%" },
             aspectRatio: "1 / 1",
             objectFit: "contain",
             filter: "grayscale(100%)",

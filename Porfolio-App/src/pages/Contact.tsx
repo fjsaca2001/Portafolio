@@ -28,112 +28,83 @@ const Contact = (/*props: Props*/) => {
   return (
     <Box
       sx={{
-        minHeight: "80vh",
         backgroundColor: "#b8b8b8",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         px: 2,
-        scrollBehavior: "smooth",
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "repeat(1, 1fr)",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(2, 1fr)",
+        },
+        gap: 1,
+        height: { md: "90vh" },
       }}
     >
-      <Box sx={{ maxWidth: "100%" }}>
-        <Box
+      <Box sx={{ width: { xs: "80%", sm: "50%", md: "50%" }, margin: "auto", textAlign:"center"}}>
+        <SendOutlinedIcon
           sx={{
+            fontSize: "80px",
+            color: "#000000ff",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            "&:hover": {
+              transform: {xs: "translateY(-6px) rotate(-45deg)", md:"scale(1.4) translateY(-6px) rotate(-45deg)"},
+            },
+            rotate: "-45deg",
+          }}
+        />
+        <Typography textAlign="justify" sx={{ fontFamily: "Google Sans Flex" }}>
+          ¿Te gustaría ponerte en contacto conmigo?
+        </Typography>
+        <Typography textAlign="justify" sx={{ fontFamily: "Google Sans Flex" }}>
+          Si quieres conversar para un proyecto o alguna vacante, ¡no dudes en
+          enviarme un correo electrónico!
+        </Typography>
+      </Box>
+      <Box sx={{ width: { xs: "80%", sm: "50%", md: "50%" }, margin: "auto" }}>
+        <Box
+          component="form"
+          ref={formRef}
+          onSubmit={sendEmail}
+          sx={{
+            maxWidth: 500,
+            mx: "auto",
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 4,
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "stretch",
+            flexDirection: "column",
+            gap: 2,
           }}
         >
-          <Box sx={{ width: "40%", display: "flex", justifyContent: "start" }}>
-            <Box
-              sx={{
-                width: "80%",
-                display: "flex",
-                flexDirection: "column",
-                gap: 5,
-                alignContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <SendOutlinedIcon
-                sx={{
-                  fontSize: "80px",
-                  color: "#000000ff",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    transform: "scale(1.4) translateY(-6px) rotate(-45deg)",
-                  },
-                  rotate: "-45deg",
-                }}
-              />
-              <Typography
-                textAlign="justify"
-                sx={{ fontFamily: "Google Sans Flex" }}
-              >
-                ¿Te gustaría ponerte en contacto conmigo?
-              </Typography>
-              <Typography
-                textAlign="justify"
-                sx={{ fontFamily: "Google Sans Flex" }}
-              >
-                Si quieres conversar para un proyecto o alguna vacante, ¡no
-                dudes en enviarme un correo electrónico!
-              </Typography>
-            </Box>
-          </Box>
-          <Box sx={{ width: "40%", display: "flex", justifyContent: "center" }}>
-            <Box sx={{ width: "100%" }}>
-              <Box
-                component="form"
-                ref={formRef}
-                onSubmit={sendEmail}
-                sx={{
-                  maxWidth: 500,
-                  mx: "auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 2,
-                }}
-              >
-                <TextField
-                  label="Nombre"
-                  name="user_name"
-                  required
-                  fullWidth
-                  sx={{ fontFamily: "Google Sans Flex" }}
-                />
-                <TextField
-                  label="Correo electrónico"
-                  name="user_email"
-                  type="email"
-                  required
-                  fullWidth
-                  sx={{ fontFamily: "Google Sans Flex" }}
-                />
-                <TextField
-                  label="Mensaje"
-                  name="message"
-                  multiline
-                  rows={4}
-                  required
-                  fullWidth
-                  sx={{ fontFamily: "Google Sans Flex" }}
-                />
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{ fontFamily: "Google Sans Flex" }}
-                >
-                  Enviar mensaje
-                </Button>
-              </Box>
-            </Box>
-          </Box>
+          <TextField
+            label="Nombre"
+            name="user_name"
+            required
+            fullWidth
+            sx={{ fontFamily: "Google Sans Flex" }}
+          />
+          <TextField
+            label="Correo electrónico"
+            name="user_email"
+            type="email"
+            required
+            fullWidth
+            sx={{ fontFamily: "Google Sans Flex" }}
+          />
+          <TextField
+            label="Mensaje"
+            name="message"
+            multiline
+            rows={4}
+            required
+            fullWidth
+            sx={{ fontFamily: "Google Sans Flex" }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{ fontFamily: "Google Sans Flex" }}
+          >
+            Enviar mensaje
+          </Button>
         </Box>
       </Box>
     </Box>

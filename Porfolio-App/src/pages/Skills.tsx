@@ -58,105 +58,89 @@ const Skills = (/*props: Props*/) => {
   return (
     <Box
       sx={{
-        minHeight: "90vh",
-        backgroundColor: "#FAFAFA",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        px: 2,
-        scrollBehavior: "smooth",
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "repeat(1, 1fr)",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(2, 1fr)",
+        },
+        gap: 1,
+        margin: "10px auto",
+        height: { md: "90vh" },
       }}
     >
-      <Box sx={{ maxWidth: "100%" }}>
-        <Box
+      <Box sx={{ width: "90%", margin: "0px auto" }}>
+        <Typography
+          variant="h6"
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            gap: 1,
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "stretch",
+            color: "text.primary",
+            textAlign: "center",
+            fontFamily: "Google Sans Flex",
           }}
         >
-          <Box sx={{ width: "50%", display: "flex", justifyContent: "start" }}>
-            <Box sx={{ width: "80%" }}>
-              <Typography
-                variant="h6"
-                sx={{
-                  color: "text.primary",
-                  textAlign: "center",
-                  fontFamily: "Google Sans Flex",
-                }}
-              >
-                Tecnologías y Herramientas
-              </Typography>
-              <GridPhotos lstImagenes={lstImages} />
-            </Box>
-          </Box>
-          <Box sx={{ width: "35%", display: "flex", justifyContent: "start" }}>
-            <Box sx={{ width: "100%" }}>
-              <Typography
-                variant="h6"
-                sx={{
-                  color: "text.primary",
-                  textAlign: "start",
-                  fontFamily: "Google Sans Flex",
-                }}
-              >
-                Empresas en las que he trabajado
-              </Typography>
-              <CardMedia
-                component="img"
-                alt="Institute"
-                image={LogoFaces}
-                sx={{
-                  height: 80,
-                  objectFit: "contain",
-                  marginTop: "20px",
-                }}
-              />
-              <Typography
-                gutterBottom
-                variant="subtitle1"
-                component="div"
-                sx={{ fontFamily: "Google Sans Flex" }}
-              >
-                Fundación de Apoyo Social y Economico del Ecuador
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
-              >
-                Técnico de Desarrollo | Jun 2025 - Actualidad
-              </Typography>
-              <br />
-              <CardMedia
-                component="img"
-                alt="Institute"
-                image={LogoCoop}
-                sx={{
-                  height: 80,
-                  objectFit: "contain",
-                  marginTop: "20px",
-                }}
-              />
-              <Typography
-                gutterBottom
-                variant="subtitle1"
-                component="div"
-                sx={{ fontFamily: "Google Sans Flex" }}
-              >
-                Cooperativa de Ahorro y Crédito Manuel Estevan Godoy Ortega
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
-              >
-                Desarrollador de Sistemas | Jun 2023 - May 2025
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+          Tecnologías y Herramientas
+        </Typography>
+        <GridPhotos lstImagenes={lstImages} />
+      </Box>
+      <Box sx={{ width: "90%", margin: "0px auto", textAlign: "center" }}>
+        <Typography
+          variant="h6"
+          sx={{
+            color: "text.primary",
+            fontFamily: "Google Sans Flex",
+          }}
+        >
+          Empresas en las que he trabajado
+        </Typography>
+        <CardMedia
+          component="img"
+          alt="Institute"
+          image={LogoFaces}
+          sx={{
+            height: 80,
+            objectFit: "contain",
+            marginTop: "20px",
+          }}
+        />
+        <Typography
+          gutterBottom
+          variant="subtitle1"
+          component="div"
+          sx={{ fontFamily: "Google Sans Flex" }}
+        >
+          Fundación de Apoyo Social y Economico del Ecuador
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+        >
+          Técnico de Desarrollo | Jun 2025 - Actualidad
+        </Typography>
+        <br />
+        <CardMedia
+          component="img"
+          alt="Institute"
+          image={LogoCoop}
+          sx={{
+            height: 80,
+            objectFit: "contain",
+            marginTop: "20px",
+          }}
+        />
+        <Typography
+          gutterBottom
+          variant="subtitle1"
+          component="div"
+          sx={{ fontFamily: "Google Sans Flex" }}
+        >
+          Cooperativa de Ahorro y Crédito Manuel Estevan Godoy Ortega
+        </Typography>
+        <Typography
+          variant="body2"
+          sx={{ color: "text.secondary", fontFamily: "Google Sans Flex" }}
+        >
+          Desarrollador de Sistemas | Jun 2023 - May 2025
+        </Typography>
       </Box>
     </Box>
   );

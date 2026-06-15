@@ -1,4 +1,4 @@
-import { autocompleteClasses, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Card from "../components/Card";
 import logoUtpl from "../../public/img/utpl2.png";
 import logoUide from "../../public/img/logo-uide.webp";

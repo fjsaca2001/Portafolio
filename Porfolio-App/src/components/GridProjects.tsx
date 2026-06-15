@@ -28,7 +28,7 @@ const GridProjects = (props: GridPhotosProps) => {
       {lstProjects.map((project) => (
         <Box
           onClick={() => setSelectedProject(project)}
-          key={project.cod}
+          key={project.code}
           sx={{
             position: "relative",
             aspectRatio: "19 / 13",
@@ -48,14 +48,13 @@ const GridProjects = (props: GridPhotosProps) => {
               boxShadow: 6,
             },
             borderRadius: 3,
-            overflow: "hidden",
             boxShadow: 2,
           }}
         >
           <Box
             component="img"
             src={project.pathImage}
-            alt={`img-${project.cod}`}
+            alt={`img-${project.code}`}
             sx={{
               width: "100%",
               height: "100%",

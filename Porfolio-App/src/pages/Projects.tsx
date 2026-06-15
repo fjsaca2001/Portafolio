@@ -1,4 +1,4 @@
-import { autocompleteClasses, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import GridProjects from "../components/GridProjects";
 import { Project } from "../interfaces/types";
 import P1 from "../../public/img/project/P1.png";

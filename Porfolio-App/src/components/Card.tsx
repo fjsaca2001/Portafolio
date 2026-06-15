@@ -1,13 +1,7 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import { styled } from "@mui/material/styles";
-import { SxProps, Theme } from "@mui/material";
 
 interface ImgMediaCardProps {
   pathImage: string;

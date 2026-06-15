@@ -6,5 +6,5 @@ export interface Project {
   description: string;
   tecnologias: string[];
   responsabilidades: string[];
-  arquitectura: string:
+  arquitectura: string;
 }
